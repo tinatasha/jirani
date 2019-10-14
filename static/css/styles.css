@@ -1,9 +1,9 @@
 body{
-	background-color: #111;
+	background-color: #000;
 }
 
 header{
-	background-color: rgb(31, 27, 27);
+	background-color: #111;
 	border-bottom: 1px solid #CCC;
 	position: fixed;
 	left: 0;

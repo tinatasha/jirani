@@ -6,4 +6,6 @@ from . import views
 
 urlpatterns = [
     url(r'^', views.feed ),
+    url(r'search/', views.search_results, name="search_results"),
+    
 ]
