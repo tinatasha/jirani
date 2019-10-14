@@ -1,0 +1,1 @@
+web: gunicorn grammina.wsgi --log-file -
