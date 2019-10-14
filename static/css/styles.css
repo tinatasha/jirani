@@ -161,6 +161,13 @@ header{
 	
 }
 
+#red_heart{
+	padding: 7px;
+	font-size: 25px;
+	color: red;
+	font-weight: 600;
+}
+
 .fa-bookmark{
 	float: right;
 	margin-right: 25px;
