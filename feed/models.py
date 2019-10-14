@@ -2,7 +2,7 @@ from django.db import models
 from django.utils import timezone
 # Create your models here.
 class Image(models.Model):
-    image = models.ImageField(upload_to="images")
+    image = models.ImageField(upload_to='images/')
     image_name = models.CharField(max_length=300)
     image_caption = models.TextField(max_length=500)
     likes = models.IntegerField(default=0)

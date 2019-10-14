@@ -3,7 +3,7 @@ body{
 }
 
 header{
-	background-color: #444242;
+	background-color: rgb(31, 27, 27);
 	border-bottom: 1px solid #CCC;
 	position: fixed;
 	left: 0;
@@ -161,13 +161,6 @@ header{
 	
 }
 
-#red_heart{
-	padding: 7px;
-	font-size: 25px;
-	color: red;
-	font-weight: 600;
-}
-
 .fa-bookmark{
 	float: right;
 	margin-right: 25px;
@@ -217,4 +210,8 @@ header{
 	padding: 0px 16px;
 	text-transform: uppercase;
 	
+}
+
+#red_likes{
+	color:red; 
 }

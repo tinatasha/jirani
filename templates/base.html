@@ -9,16 +9,22 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
 		<link rel="stylesheet" href="{% static 'css/styles.css'%}">
 		<script src="{% static 'js/scripts.js'%}"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	</head>
 	<body>
+		<script>
+			function myFunction(x) {
+  x.classList.toggle("fas fa-heart");
+}
+			</script>	
 		<header>
 			<div class="navigation">
 				<div class="instalogo">
-					<a href="/">
+					<a href="">
 					<i class="fab fa-instagram"></i>
 					</a>
 					<a class="vl" href="/"></a>
-					<a href="/">Instagram</a>
+					<a href="">Instagram</a>
 				</div>
 			
 			<div class="search_bar">
@@ -29,24 +35,25 @@
 			</div>
 		
 			<div class="contact_icons">
-				<a class="explore" href="/">
+				<a class="explore" href="">
 				<i class="far fa-compass"></i>
 				</a>
-				<a class="likes" href="/">
+				<a class="likes" href="">
 				<i class="far fa-heart"></i>
 				</a>
-				<a class="profile" href="/">
+				<a class="profile" href="">
 				<i class="far fa-user"></i>
 				</a>
 			</div>
 		</div>
 		</header>
+		
 		<div class="content_container">
 			{% for image in images%}
 			<div class="card">
 				<div class="card_header">
 					<div class="profile_image">
-							<img src="{{image.image.url}}" alt="img">
+							<img src="{{image.image.url}}" alt="{{image.image_name}}">
 					</div>
 					<div class="post_info">
 						<div class="post_name">
@@ -67,8 +74,12 @@
 					<!-- img here? -->
 				</div>
 				<div class="engagement">
-					<a id="red_likes" href=""><i class="far fa-heart"></i></a>
 					<a id="white_likes" href=""><i class="far fa-heart"></i></a>
+					
+					
+					<a  style="color:red; display: none;" id="red_likes" href=""><i class="fas fa-heart"></i></a>
+					
+					
 					<a href=""><i class="far fa-comment"></i></a>
 					<a href=""><i style="transform:rotate(-90deg);" class="fas fa-sign-out-alt"></i></a>
 					<a href=""><i class="far fa-bookmark"></i></a>
