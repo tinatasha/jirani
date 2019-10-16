@@ -24,7 +24,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include("feed.urls")),
     url(
-        "",
+        "signup/login/",
         LoginView.as_view(),
         {"next_page": settings.LOGIN_REDIRECT_URL},
         name="login",
