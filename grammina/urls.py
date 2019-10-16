@@ -1,4 +1,4 @@
-"""grammina URL Configuration
+"""grammina2 URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.11/topics/http/urls/
@@ -15,7 +15,6 @@ Including another URLconf
 """
 from django.conf import settings
 from django.conf.urls.static import static
-from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf.urls import url,include
 from django.contrib import admin
@@ -23,10 +22,9 @@ from django.contrib.auth.views import LogoutView, LoginView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^accounts/', include("django.contrib.auth.urls")),
     url(r'^', include("feed.urls")),
     url(
-        r'login/',
+        "",
         LoginView.as_view(),
         {"next_page": settings.LOGIN_REDIRECT_URL},
         name="login",
@@ -37,7 +35,7 @@ urlpatterns = [
         {"next_page": settings.LOGOUT_REDIRECT_URL},
         name="logout",
     ),
-    
 ]
+
 if settings.DEBUG:
    urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

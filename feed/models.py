@@ -1,5 +1,8 @@
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 # Create your models here.
 
 class Image(models.Model):
@@ -17,7 +20,21 @@ class Image(models.Model):
     
     def __str__(self):
         return self.image_name
+
     
-class Profile(models.Model):
-    profile_photo = models.ImageField(upload_to="profile")
-    bio = models.TextField(max_length=800)
+class UserProfile(models.Model):
+    user = models.OneToOneField(User, default="", related_name="profile", on_delete=models.CASCADE)
+    photo = models.ImageField(
+        upload_to="profile/", max_length=255, null=True, blank=True, default=""
+    )
+    phone = models.DecimalField(max_digits=10, decimal_places=0, default=0)
+    bio = models.TextField()
+    
+    def __str__(self):
+        return self.user.username
+    
+@receiver(post_save, sender=User)
+def update_user_profile(sender, instance, created, **kwargs):
+    if created:
+        UserProfile.objects.create(user=instance)
+    instance.profile.save()
