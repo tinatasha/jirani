@@ -11,24 +11,69 @@
 	<title>Document</title>
 	{% block styles%} {% bootstrap_css%} {% endblock%}
 </head>
+{% block content%}
 <body style="background-color: #000 ; color: #fafafa; text-align: center;">
-	<h1>
-		PROFILE HERE!!!
-	</h1>
-	<div>
-			<a class="btn btn-primary" href="{% url 'edit_profile'%}">Edit Profile</a>
-	
+	<div class="row">
+		<div class="col-md-4">
+			
+				<img src="{{user_profile.photo.url}}" alt="prof">
+
+		</div>
+		<div class="col-md-8">
+			<div style="color: #fafafa;">
+					{{ user_data.username }}
+					<br>
+					<a class="btn btn-primary" href="{% url 'edit_profile'%}">Edit Profile</a>
+					<br>
+					<!-- icons -->
+			</div>
+		
+		<div>
+			posts
+			<br>
+			followers
+			<br>
+			following
+		</div>
+		<div>
+			{{ user_profile.bio}}
+		</div>
 	</div>
-	<div>
-		{{ user_data.username }}
-		<br>
-		<img src="{{user_profile.photo.url}}" alt="prof">
-		<br>
-		{{ user_profile.phone}}
+</div>
+	<div id="highlights">
+		
+	</div>
+	<div id="some_icons">
+		<div id="posts">
+			<i class="fas fa-th"></i>
+		</div>
+		<div>
+			<i class="fas fa-tv"></i>
+		</div>
+		<div>
+			<i class="far fa-bookmark"></i>
+		</div>
+		<div>
+			<i class="fas fa-portrait"></i>
+		</div>
+	</div>
+	<div id="posts_made" class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<!-- some post by user -->
+			</div>
+			<div class="col-md-4">
+				<!-- some post by user -->
+			</div>
+			<div class="col-md-4">
+				<!-- some post by user -->
+			</div>
+		</div>
 	</div>
 	<div>
 		<a href="{% url 'logout'%}">Logout</a>
 	</div>
+	{%endblock%}
 </body>
 </html>
 
