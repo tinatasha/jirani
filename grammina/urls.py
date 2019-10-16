@@ -25,7 +25,7 @@ urlpatterns = [
     # url(r'^login/', include("django.contrib.auth.urls")),
     url(r'^', include("feed.urls")),
     url(
-        'login/',
+        '',
         LoginView.as_view(),
         {"next_page": settings.LOGIN_REDIRECT_URL},
         name="login",

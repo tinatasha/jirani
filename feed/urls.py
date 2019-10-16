@@ -5,8 +5,8 @@ from . import views
 from django.shortcuts import redirect
 
 urlpatterns = [
-    url(r'^login/feed/', views.feed, name='feed'),
-    url(r'^signup/', views.signup, name='signup'),
-    url(r'^login/feed/profile/', views.profile, name="profile"),
-    url(r'^login/feed/profile/edit_profile/', views.edit_profile, name="edit_profile"),
+    url(r'login/feed/', views.feed, name='feed'),
+    url(r'signup/', views.signup, name='signup'),
+    url(r'login/profile/', views.profile, name="profile"),
+    url(r'login/edit_profile/', views.edit_profile, name="edit_profile"),
 ]
