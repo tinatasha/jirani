@@ -23,7 +23,7 @@ class Image(models.Model):
 
     
 class UserProfile(models.Model):
-    user = models.OneToOneField(User, default="", related_name="profile", on_delete=models.CASCADE)
+    user = models.OneToOneField(User, unique=True, related_name="profile", on_delete=models.CASCADE)
     photo = models.ImageField(
         upload_to="profile/", max_length=255, null=True, blank=True, default=""
     )
