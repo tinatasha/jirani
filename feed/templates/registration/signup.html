@@ -1,0 +1,32 @@
+{% load bootstrap3 %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	{% block styles%} {% bootstrap_css%} {% endblock%}
+</head>
+<body style="background-color: #000 ; color: #fafafa; text-align: center;">
+	<div class="col-md-4">
+		
+	</div>
+<div class="col-md-4">
+	<form action="/signup/" method="POST">
+		{% csrf_token %}
+		{% bootstrap_form form %}
+		<div>
+			
+		</div>
+		<button class="btn btn-primary" type="submit">Signup</button>
+		<p>
+			Already have an account? 
+			<a href="{% url 'login'%}">Login</a>
+		</p>
+	</form>
+</div>
+
+</body>
+</html>
