@@ -44,6 +44,7 @@ DATABASES['default'].update(db_from_env)
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
@@ -55,7 +56,7 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 SECRET_KEY = 'mkd1%!o4g*1uc1faex!b*7xy=cx&%1^xdm9td^%7jo$d+pmf%&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
