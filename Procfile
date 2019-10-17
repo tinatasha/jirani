@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: gunicorn grammina.wsgi --log-file -
+web: gunicorn grammina.wsgi
