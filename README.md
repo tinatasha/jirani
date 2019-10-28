@@ -1,8 +1,8 @@
-# GRAMMINA
+# JIRANI
 A django application showcasing the beauty of black women.
 
 ## Description
-A clone of instagram.
+a neighborhood django app.
 
 
 #### Link to deployed site
